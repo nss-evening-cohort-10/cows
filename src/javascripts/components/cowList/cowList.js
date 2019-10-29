@@ -4,16 +4,10 @@ import './cowList.scss';
 
 const buildCows = () => {
   cowData.getCows()
-    .then((response) => {
-      console.log(response);
-      const demCows = response.data.cows;
-      const cows = [];
-      Object.keys(demCows).forEach((cowId) => {
-        // demCows['cow3']
-        demCows[cowId].id = cowId;
-        cows.push(demCows[cowId]);
-      });
-      console.log('it worked!', cows);
+    .then((cows) => {
+      console.log('cow array from cowList', cows);
+
+      // call a domStringBuilder function and pass in cows
     })
     .catch((error) => {
       console.error('shit broke', error);
